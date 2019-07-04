@@ -1,0 +1,7 @@
+<h3> Create a new book </h3>
+
+<%= simple_form_for([@book, @book.reviews.build]) do |f| %>
+    <%= f.input :rating, label: "Rating" %>
+    <%= f.input :comment, label: "Comment" %>
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<p>
+    <%= review.rating %> <br>
+    <%= review.comment %>
+</p>
+
+<% if user_signed_in? %>
+    <% if review.user_id == current_user.id %>
+    <%= link_to "Edit Review" , edit_book_review_path(review.book, review) %>
+    <%= link_to "Delete Review", book_review_path(review.book, review), method: :delete, data: {confirm: "Delete Review ?"} %>
+<% end %>
+<% end %>
